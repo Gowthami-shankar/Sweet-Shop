@@ -191,7 +191,7 @@ Filter](sweet-shop/screenshots/Screenshot%202025-11-02%20161113.png) \>
 Users can search sweets by name, category, and price range.\
 \> Results update dynamically, improving the user experience.
 
-------------------------------------------------------------------------
+
 
 ## ✒️ 11. Author and License Information
 
