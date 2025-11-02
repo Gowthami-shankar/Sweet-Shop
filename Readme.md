@@ -153,43 +153,43 @@ AI helped speed up TDD workflow and ensure code reliability.
 
 ## 📸 10. Screenshots
 
-Below are the visual highlights of the **Sweet Shop Management System**,
-demonstrating both frontend UI and backend functionality.\
-All screenshots are stored inside the project at:\
+Below are the visual highlights of the **Sweet Shop Management System**,  
+demonstrating both frontend UI and backend functionality.  
+All screenshots are stored inside the repository at:  
 `sweet-shop/screenshots/`
 
+---
+
 ### 🧾 **User Registration Page**
+![Register Page](https://github.com/Gowthami-shankar/Sweet-Shop/blob/master/screenshots/Screenshot%202025-11-02%20141542.png?raw=true)
+> This page allows new users to create an account by entering their username, password, and role (Customer or Admin).  
+> The registration form ensures validation and secure data submission through the backend API.
 
-![Register
-Page](sweet-shop/screenshots/Screenshot%202025-11-02%20141542.png) \>
-This page allows new users to create an account by entering their
-username, password, and role (Customer or Admin).\
-\> The registration form ensures validation and secure data submission
-through the backend API.
+---
 
-### 🧁 **Admin Panel -- Add & Manage Sweets**
+### 🧁 **Admin Panel – Add & Manage Sweets**
+![Admin Panel](https://github.com/Gowthami-shankar/Sweet-Shop/blob/master/screenshots/Screenshot%202025-11-02%20160909.png?raw=true)
+> Admin users can view, add, edit, and delete sweets.  
+> The dashboard shows stock quantities, pricing, and categories.  
+> Each card displays a sweet's details with edit and delete controls.
 
-![Admin
-Panel](sweet-shop/screenshots/Screenshot%202025-11-02%20160909.png) \>
-Admin users can view, add, edit, and delete sweets.\
-\> The dashboard shows stock quantities, pricing, and categories.\
-\> Each card displays a sweet's details with edit and delete controls.
+---
 
-### 🛒 **User Dashboard -- Sweet Listings**
+### 🛒 **User Dashboard – Sweet Listings**
+![User Dashboard](https://github.com/Gowthami-shankar/Sweet-Shop/blob/master/screenshots/Screenshot%202025-11-02%20161039.png?raw=true)
+> Logged-in users can browse sweets.  
+> The layout displays names, prices, and stock counts.  
+> Demonstrates the app's **reactive data flow** between backend and frontend.
 
-![User
-Dashboard](sweet-shop/screenshots/Screenshot%202025-11-02%20161039.png)
-\> Logged-in users can browse sweets.\
-\> The layout displays names, prices, and stock counts.\
-\> Demonstrates the app's **reactive data flow** between backend and
-frontend.
+---
 
 ### 🔍 **Search & Filter Functionality**
+![Search & Filter](https://github.com/Gowthami-shankar/Sweet-Shop/blob/master/screenshots/Screenshot%202025-11-02%20161113.png?raw=true)
+> Users can search sweets by name, category, and price range.  
+> Results update dynamically, improving the user experience.
 
-![Search and
-Filter](sweet-shop/screenshots/Screenshot%202025-11-02%20161113.png) \>
-Users can search sweets by name, category, and price range.\
-\> Results update dynamically, improving the user experience.
+---
+
 
 
 
