@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
         setUser(decodedUser.user);
         setIsAuthenticated(true);
         // Add token to api headers for all future requests
-        api.defaults.headers.common['x-auth-token'] = token;
+        api.defaults.headers.common['x-auth-token'] = `Bearer ${token}`;
       } catch (err) {
         // Token is invalid or expired
         localStorage.removeItem('token');
@@ -110,4 +110,3 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-

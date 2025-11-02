@@ -1,273 +1,206 @@
-🍬 Sweet Shop Management System (Full-Stack TDD Kata)
+# 🍬 Sweet Shop Management System (Full-Stack TDD Kata)
 
-Status
+## 📜 1. Project Overview
 
-Development Stage
+The Sweet Shop Management System is a full-stack web application
+developed as a TDD (Test-Driven Development) Kata. Its primary goal is
+to provide a secure and efficient platform for managing sweet inventory,
+processing sales, and handling user authentication for a retail
+environment.
 
-Backend
+This project demonstrates strong foundational skills in API design,
+database persistence, modern frontend development, security
+implementation, and systematic testing.
 
-Frontend
+## ✨ 2. Key Features and Objectives
 
-Testing
+The application is built to meet the core requirements outlined in the
+project specification:
 
-Complete
+### 🎯 Core Objectives
 
-Full-Stack Web App
+-   Implement a RESTful API in Node.js/Express.
+-   Enforce Token-Based Authentication (JWT) for all protected routes.
+-   Maintain persistence using a MongoDB database.
+-   Develop a responsive Single-Page Application (SPA) using React.
+-   Adhere strictly to Test-Driven Development (TDD) principles.
 
-Node.js (Express)
+### 💼 Key Features
 
-React (SPA)
+-   **User Management:** Secure user registration and login.
+-   **Inventory CRUD:** Admin users can Add, View, Update, and Delete
+    sweets.
+-   **Real-Time Stock:** Display of all available sweets with stock
+    status.
+-   **Sales Processing:** Protected endpoints for purchasing sweets.
+-   **Admin Tools:** Restock and inventory control.
+-   **Search & Filter:** Search inventory by name, category, or price
+    range.
 
-TDD with Jest/Supertest
+## 💻 3. Technologies Used
 
-📜 1. Project Overview
+  -----------------------------------------------------------------------
+  Category               Technology                  Purpose
+  ---------------------- --------------------------- --------------------
+  Backend                Node.js / Express           RESTful API
+                                                     framework
 
-The Sweet Shop Management System is a full-stack web application developed as a TDD (Test-Driven Development) Kata. Its primary goal is to provide a secure and efficient platform for managing sweet inventory, processing sales, and handling user authentication for a retail environment.
+  Database               MongoDB                     NoSQL database for
+                                                     persistence
 
-This project demonstrates strong foundational skills in API design, database persistence, modern frontend development, security implementation, and systematic testing.
+  Security               bcryptjs & jsonwebtoken     Password hashing and
+                                                     JWT verification
 
-✨ 2. Key Features and Objectives
+  Frontend               React                       UI development
 
-The application is built to meet the core requirements outlined in the project specification:
+  State Mgt.             React Context               Global auth
+                                                     management
 
-🎯 Core Objectives
+  Testing                Jest / Supertest            TDD workflow
+  -----------------------------------------------------------------------
 
-Implement a RESTful API in Node.js/Express.
+## 🧠 4. System Architecture & Workflow
 
-Enforce Token-Based Authentication (JWT) for all protected routes.
+The system follows a modular structure for maintainability.
 
-Maintain persistence using a MongoDB database.
+### Backend (backend/)
 
-Develop a responsive Single-Page Application (SPA) using React.
+-   Routes → Middleware → Models.
+-   Middleware handles JWT verification and role-based access control.
+-   Config manages MongoDB connection.
 
-Adhere strictly to Test-Driven Development (TDD) principles.
+### Frontend (frontend/)
 
-💼 Key Features
+-   **Context:** AuthContext.js provides authentication globally.
+-   **Pages:** DashboardPage.js, AdminPanelPage.js.
+-   **Components:** Reusable UI like SweetCard.js, SearchBar.js.
+-   **Services:** api.js centralizes backend calls.
 
-User Management: Secure user registration (RegisterPage.js) and login (LoginPage.js).
+## 🚀 5. Installation and Setup Instructions
 
-Inventory CRUD: Forms and UI (AdminForm.js) for Admin users to Add, View, Update, and Delete sweets.
+### 🔹 Prerequisites
 
-Real-Time Stock: Display of all available sweets (DashboardPage.js / SweetList.js) with stock status.
+-   Node.js and npm installed
+-   MongoDB instance (local or Atlas)
 
-Sales Processing: Protected endpoints for purchasing sweets, decrementing quantity.
+### 🔹 Step 1: Clone the Repository
 
-Admin Tools: Dedicated panel (AdminPanelPage.js) for administrative functions like restock and user management.
-
-Search & Filter: Functionality to search inventory by name, category, or price range.
-
-💻 3. Technologies Used
-
-The project follows a Monorepo pattern with separate backend and frontend directories.
-
-Category
-
-Technology
-
-Purpose
-
-Backend
-
-Node.js / Express
-
-Fast, minimal server and RESTful API framework.
-
-Database
-
-MongoDB
-
-NoSQL database for flexible persistence.
-
-Security
-
-bcryptjs & jsonwebtoken
-
-Password hashing and JWT token generation/validation.
-
-Frontend
-
-React
-
-Modern library for building the SPA UI.
-
-State Mgt.
-
-React Context
-
-Global state management for user authentication (AuthContext.js).
-
-Testing
-
-Jest / Supertest
-
-Used for TDD workflow (unit and API integration tests).
-
-🧠 4. System Architecture & Workflow
-
-The system is organized into a modular structure to ensure maintainability and separation of concerns.
-
-Backend (backend/)
-
-The API follows a standard architecture: Routes → Middleware → Models.
-
-Routes (routes/auth.js, routes/sweets.js, routes/admin.js) define the API endpoints.
-
-Middleware (middleware/auth.js, middleware/checkAuth.js) handles JWT verification and role-based access control before reaching the core logic.
-
-Config (config/db.js) manages the MongoDB connection using a library like Mongoose or the native driver.
-
-Frontend (frontend/)
-
-The React application uses a typical component-driven approach:
-
-Context: AuthContext.js provides user and authentication status globally.
-
-Pages: Top-level components (DashboardPage.js, AdminPanelPage.js) define the layout and navigation.
-
-Components: Reusable UI elements (SweetCard.js, SearchBar.js).
-
-Services: api.js centralizes all fetch requests to the backend.
-
-🚀 5. Installation and Setup Instructions
-
-Follow these steps to get the project running on your local machine.
-
-🔹 Prerequisites
-
-Ensure you have:
-
-Node.js (LTS) and npm installed.
-
-A running MongoDB instance (local or cloud like MongoDB Atlas).
-
-🔹 Step 1: Clone the Repository
-
+``` bash
 git clone [YOUR_REPO_URL]
 cd sweet-shop-kata
+```
 
+### 🔹 Step 2: Backend Setup
 
-
-
-
-🔹 Step 2: Backend Installation and Setup
-
-Navigate to the backend directory, install dependencies, and create the .env file.
-
+``` bash
 cd backend
-npm install mongoose # Assuming Mongoose or similar library is used
 npm install
+touch .env
+```
 
-# Create .env file for secrets
-# touch .env
+Example `.env` file:
 
+    PORT=3000
+    JWT_SECRET=YOUR_SECRET_KEY
+    MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
 
+### 🔹 Step 3: Frontend Setup
 
-
-
-Example .env Content (in backend/):
-
-PORT=3000
-JWT_SECRET=YOUR_RANDOM_SECRET_KEY
-MONGO_URI=mongodb://localhost:27017/sweetshopdb # YOUR MONGODB CONNECTION STRING
-
-
-
-
-🔹 Step 3: Frontend Installation
-
-Navigate to the frontend directory and install dependencies.
-
+``` bash
 cd ../frontend
 npm install
+```
 
+## ▶️ 6. How to Run the Project
 
+### Start Backend
 
-
-
-▶️ 6. How to Run the Project
-
-You must run the backend and frontend simultaneously in separate terminal windows.
-
-1. Start the Backend Server
-
-From the backend/ directory:
-
+``` bash
 npm run dev
-# Server running on http://localhost:3000
+```
 
+Backend runs on: `http://localhost:3000`
 
+### Start Frontend
 
-
-
-(The backend will attempt to connect to the MongoDB instance specified in the .env file.)
-
-2. Start the Frontend Application
-
-From the frontend/ directory:
-
+``` bash
 npm start
-# Application running on http://localhost:3001
+```
 
+Frontend runs on: `http://localhost:3001`
 
+## 🧪 7. Testing Information
 
+Run backend tests:
 
-
-🧪 7. Testing Information
-
-This project was built using TDD, meaning tests were written before implementation.
-
-Run Backend Tests
-
-From the backend/ directory:
-
+``` bash
 npm test
+```
 
+Uses Jest and Supertest for unit and integration tests.
 
+## 🤖 8. AI Assistance & Acknowledgment
 
+This project adheres to AI usage guidelines.\
+AI tools (like Gemini) assisted in drafting test logic, schema design,
+and frontend auth logic.
 
+## ✨ 9. Reflection
 
-The test suite utilizes Jest for the runner and Supertest to mock and verify HTTP requests against the Express API. Coverage reports (e.g., coverage/lcov-report/) are generated upon test execution.
+AI helped speed up TDD workflow and ensure code reliability.
 
-🖼️ 8. Screenshots
+------------------------------------------------------------------------
 
-(Please replace these placeholders with actual images of your running application, demonstrating the features below.)
+## 📸 10. Screenshots
 
-1. User Authentication
+Below are the visual highlights of the **Sweet Shop Management System**,
+demonstrating both frontend UI and backend functionality.\
+All screenshots are stored inside the project at:\
+`sweet-shop/screenshots/`
 
-A screenshot showing the Login or Registration page.
+### 🧾 **User Registration Page**
 
-2. Dashboard View
+![Register
+Page](sweet-shop/screenshots/Screenshot%202025-11-02%20141542.png) \>
+This page allows new users to create an account by entering their
+username, password, and role (Customer or Admin).\
+\> The registration form ensures validation and secure data submission
+through the backend API.
 
-A screenshot of the main sweet list, showing filtering/search functionality.
+### 🧁 **Admin Panel -- Add & Manage Sweets**
 
-3. Admin Panel
+![Admin
+Panel](sweet-shop/screenshots/Screenshot%202025-11-02%20160909.png) \>
+Admin users can view, add, edit, and delete sweets.\
+\> The dashboard shows stock quantities, pricing, and categories.\
+\> Each card displays a sweet's details with edit and delete controls.
 
-A screenshot of the AdminPanelPage.js showing the inventory management form.
+### 🛒 **User Dashboard -- Sweet Listings**
 
-🤖 9. AI Assistance & Acknowledgment
+![User
+Dashboard](sweet-shop/screenshots/Screenshot%202025-11-02%20161039.png)
+\> Logged-in users can browse sweets.\
+\> The layout displays names, prices, and stock counts.\
+\> Demonstrates the app's **reactive data flow** between backend and
+frontend.
 
-This project adheres to the AI usage guidelines specified in the Kata. AI tools were leveraged to enhance the TDD workflow and accelerate development.
+### 🔍 **Search & Filter Functionality**
 
-🛠️ AI Tools Used:
+![Search and
+Filter](sweet-shop/screenshots/Screenshot%202025-11-02%20161113.png) \>
+Users can search sweets by name, category, and price range.\
+\> Results update dynamically, improving the user experience.
 
-Gemini (Google's AI Assistant)
+------------------------------------------------------------------------
 
-$$Other tool, e.g., GitHub Copilot$$
+## ✒️ 11. Author and License Information
 
-$$$$$$$$
+**Author:**\
+Gowthami\
+[GitHub Profile](https://github.com/Gowthami-shankar)
 
-📝 Reflection:
+**License:**\
+This project is licensed under the **MIT License** --- see the
+`LICENSE.md` file for details.
 
-AI was instrumental in generating initial Jest and Supertest test boilerplate, drafting MongoDB schema definitions and Mongoose methods, and assisting with the React Context logic (AuthContext.js) to ensure secure state management. This allowed for immediate focus on the critical business logic of the inventory system. All AI-assisted commits were tagged as co-authored.
-
-✒️ 10. Author and License Information
-
-Author
-
-Gowthami
-
-https://github.com/Gowthami-shankar
-
-License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+------------------------------------------------------------------------
